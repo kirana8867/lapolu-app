@@ -2,8 +2,9 @@ import { useState, useRef } from 'react';
 import {
   View, Text, TextInput, TouchableOpacity, ScrollView,
   StyleSheet, ActivityIndicator, Linking, Alert,
-  KeyboardAvoidingView, Platform, SafeAreaView
+  KeyboardAvoidingView, Platform
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const COLORS = {
   primary: '#48426D',
