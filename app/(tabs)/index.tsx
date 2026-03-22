@@ -40,7 +40,7 @@ const LAWYERS = [
   {id:'NK', name:'Adv. Neha Kapoor', spec:'Cyber & IT Law', court:'Supreme Court', rating:'4.9', reviews:'267', color:'#1A3A8A', bg:'#E8EEF8'},
 ];
 
-const LEGAL = {
+const LEGAL_DATA = {
   privacy: {
     title: 'Privacy Policy',
     content: `Last updated: March 2025\n\nLAPOLU Indian Market is committed to protecting your privacy under the Digital Personal Data Protection Act 2023 and the IT Act 2000.\n\nINFORMATION WE COLLECT\nMobile numbers for OTP login, legal queries, language preferences, device info. Your API key is stored only in your browser, never on our servers.\n\nHOW WE USE IT\nTo provide AI legal responses, facilitate lawyer consultations, improve the platform. We never sell your data.\n\nDATA SECURITY\nAll data encrypted via SSL. Session billing stored for 90 days for dispute resolution only.\n\nYOUR RIGHTS\nAccess, correct, erase your data. Withdraw consent. File complaint with Data Protection Board of India.\n\nContact: help@lapolu.com`
@@ -63,28 +63,6 @@ const LEGAL = {
   }
 };
 
-const LEGAL = {
-  privacy: {
-    title: 'Privacy Policy',
-    content: `Last updated: March 2025\n\nLAPOLU Indian Market is committed to protecting your privacy under the Digital Personal Data Protection Act 2023 and the IT Act 2000.\n\nINFORMATION WE COLLECT\nMobile numbers for OTP login, legal queries, language preferences, device info. Your API key is stored only in your browser, never on our servers.\n\nHOW WE USE IT\nTo provide AI legal responses, facilitate lawyer consultations, improve the platform. We never sell your data.\n\nDATA SECURITY\nAll data encrypted via SSL. Session billing stored for 90 days for dispute resolution only.\n\nYOUR RIGHTS\nAccess, correct, erase your data. Withdraw consent. File complaint with Data Protection Board of India.\n\nContact: help@lapolu.com`
-  },
-  terms: {
-    title: 'Terms and Conditions',
-    content: `Governing Law: India\nLast updated: March 2025\n\nBy using LAPOLU, you agree to these terms.\n\n1. ACCEPTANCE\nYou confirm you are 18+ and agree to be legally bound.\n\n2. NATURE OF SERVICE\nLAPOLU provides general legal information only, not legal advice. No attorney-client relationship is created. Always consult a Bar Council advocate.\n\n3. LAWYER CONNECT\nAdvocates are independent professionals. Billed at Rs.21 per minute. LAPOLU is an intermediary only.\n\n4. USER OBLIGATIONS\nDo not use for unlawful purposes. Do not submit false information.\n\n5. GOVERNING LAW\nIndian law. Disputes in Indian courts.\n\nContact: help@lapolu.com`
-  },
-  disclaimer: {
-    title: 'Legal Disclaimer',
-    content: `Please read this disclaimer carefully before using LAPOLU.\n\nNOT LEGAL ADVICE\nAll information from LAPOLU is for general educational purposes only. It is not legal advice. No attorney-client relationship is formed.\n\nAI LIMITATIONS\nAI can make errors and may not reflect current amendments to BNS, BNSS and BSA. Always verify with a qualified advocate before taking legal action.\n\nNO GUARANTEE\nLAPOLU makes no guarantees about legal outcomes. Results depend on specific facts of each case.\n\nADVOCATE INDEPENDENCE\nAdvocates on LAPOLU are independent professionals registered with the Bar Council of India.\n\nEMERGENCIES\nIn emergencies, contact police, courts or legal aid immediately. Do not rely solely on this app.\n\nBy using LAPOLU, you acknowledge and agree to this disclaimer.`
-  },
-  refund: {
-    title: 'Refund Policy',
-    content: `Applicable to Lawyer Connect\nEffective: March 2025\n\nBILLING\nBilled at Rs.21 per minute from session start to end. Partial minutes are billed as full minutes.\n\nREFUND ELIGIBILITY\n- Technical failure on LAPOLU platform\n- Advocate failed to join within 2 minutes\n- Duplicate charges due to payment errors\n- Unauthorized transaction reported within 24 hours\n\nNON-REFUNDABLE\n- Completed sessions regardless of satisfaction\n- Sessions ended by you after receiving advice\n- Connectivity issues on your end\n\nHOW TO REQUEST\nEmail help@lapolu.com within 7 days with session details. Refunds in 5 to 7 business days.\n\nContact: help@lapolu.com`
-  },
-  advocate: {
-    title: 'Advocate Terms',
-    content: `For advocates registered on LAPOLU.\n\n1. ELIGIBILITY\nMust hold valid LLB. Be enrolled with Bar Council of India or State Bar Council. Hold valid Certificate of Practice. Not be under suspension.\n\n2. PLATFORM ROLE\nLAPOLU is a technology intermediary only. You are an independent professional solely responsible for the legal advice you provide.\n\n3. CODE OF CONDUCT\nComply with Bar Council of India Rules, Advocates Act 1961, LAPOLU community standards. Violations lead to immediate removal.\n\n4. FEES AND PAYOUTS\nRate: Rs.21 per minute. LAPOLU retains platform commission. Weekly payouts via NEFT. GST is your responsibility.\n\n5. CONFIDENTIALITY\nMaintain strict client confidentiality.\n\n6. TERMINATION\nEither party may terminate with 7 days notice.\n\nContact: help@lapolu.com`
-  }
-};
 
 export default function HomeScreen() {
   const [lang, setLang] = useState('English');
@@ -348,7 +326,7 @@ export default function HomeScreen() {
             <View style={s.footerBtns}>
               {['privacy','terms','disclaimer','refund','advocate'].map(key => (
                 <TouchableOpacity key={key} style={s.footerBtn} onPress={() => setLegalModal(key)}>
-                  <Text style={s.footerBtnText}>{LEGAL[key].title}</Text>
+                  <Text style={s.footerBtnText}>{LEGAL_DATA[key].title}</Text>
                 </TouchableOpacity>
               ))}
             </View>
@@ -358,13 +336,13 @@ export default function HomeScreen() {
             <View style={s.modalOverlay}>
               <View style={s.modalBox}>
                 <View style={s.modalHead}>
-                  <Text style={s.modalTitle}>{LEGAL[legalModal].title}</Text>
+                  <Text style={s.modalTitle}>{LEGAL_DATA[legalModal].title}</Text>
                   <TouchableOpacity onPress={() => setLegalModal(null)}>
                     <Text style={s.modalClose}>x</Text>
                   </TouchableOpacity>
                 </View>
                 <ScrollView style={s.modalBody}>
-                  <Text style={s.modalText}>{LEGAL[legalModal].content}</Text>
+                  <Text style={s.modalText}>{LEGAL_DATA[legalModal].content}</Text>
                 </ScrollView>
               </View>
             </View>
