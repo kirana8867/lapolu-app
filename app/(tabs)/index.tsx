@@ -40,6 +40,52 @@ const LAWYERS = [
   {id:'NK', name:'Adv. Neha Kapoor', spec:'Cyber & IT Law', court:'Supreme Court', rating:'4.9', reviews:'267', color:'#1A3A8A', bg:'#E8EEF8'},
 ];
 
+const LEGAL = {
+  privacy: {
+    title: 'Privacy Policy',
+    content: `Last updated: March 2025\n\nLAPOLU Indian Market is committed to protecting your privacy under the Digital Personal Data Protection Act 2023 and the IT Act 2000.\n\nINFORMATION WE COLLECT\nMobile numbers for OTP login, legal queries, language preferences, device info. Your API key is stored only in your browser, never on our servers.\n\nHOW WE USE IT\nTo provide AI legal responses, facilitate lawyer consultations, improve the platform. We never sell your data.\n\nDATA SECURITY\nAll data encrypted via SSL. Session billing stored for 90 days for dispute resolution only.\n\nYOUR RIGHTS\nAccess, correct, erase your data. Withdraw consent. File complaint with Data Protection Board of India.\n\nContact: help@lapolu.com`
+  },
+  terms: {
+    title: 'Terms and Conditions',
+    content: `Governing Law: India\nLast updated: March 2025\n\nBy using LAPOLU, you agree to these terms.\n\n1. ACCEPTANCE\nYou confirm you are 18+ and agree to be legally bound.\n\n2. NATURE OF SERVICE\nLAPOLU provides general legal information only, not legal advice. No attorney-client relationship is created. Always consult a Bar Council advocate.\n\n3. LAWYER CONNECT\nAdvocates are independent professionals. Billed at Rs.21 per minute. LAPOLU is an intermediary only.\n\n4. USER OBLIGATIONS\nDo not use for unlawful purposes. Do not submit false information.\n\n5. GOVERNING LAW\nIndian law. Disputes in Indian courts.\n\nContact: help@lapolu.com`
+  },
+  disclaimer: {
+    title: 'Legal Disclaimer',
+    content: `Please read this disclaimer carefully before using LAPOLU.\n\nNOT LEGAL ADVICE\nAll information from LAPOLU is for general educational purposes only. It is not legal advice. No attorney-client relationship is formed.\n\nAI LIMITATIONS\nAI can make errors and may not reflect current amendments to BNS, BNSS and BSA. Always verify with a qualified advocate before taking legal action.\n\nNO GUARANTEE\nLAPOLU makes no guarantees about legal outcomes. Results depend on specific facts of each case.\n\nADVOCATE INDEPENDENCE\nAdvocates on LAPOLU are independent professionals registered with the Bar Council of India.\n\nEMERGENCIES\nIn emergencies, contact police, courts or legal aid immediately. Do not rely solely on this app.\n\nBy using LAPOLU, you acknowledge and agree to this disclaimer.`
+  },
+  refund: {
+    title: 'Refund Policy',
+    content: `Applicable to Lawyer Connect\nEffective: March 2025\n\nBILLING\nBilled at Rs.21 per minute from session start to end. Partial minutes are billed as full minutes.\n\nREFUND ELIGIBILITY\n- Technical failure on LAPOLU platform\n- Advocate failed to join within 2 minutes\n- Duplicate charges due to payment errors\n- Unauthorized transaction reported within 24 hours\n\nNON-REFUNDABLE\n- Completed sessions regardless of satisfaction\n- Sessions ended by you after receiving advice\n- Connectivity issues on your end\n\nHOW TO REQUEST\nEmail help@lapolu.com within 7 days with session details. Refunds in 5 to 7 business days.\n\nContact: help@lapolu.com`
+  },
+  advocate: {
+    title: 'Advocate Terms',
+    content: `For advocates registered on LAPOLU.\n\n1. ELIGIBILITY\nMust hold valid LLB. Be enrolled with Bar Council of India or State Bar Council. Hold valid Certificate of Practice. Not be under suspension.\n\n2. PLATFORM ROLE\nLAPOLU is a technology intermediary only. You are an independent professional solely responsible for the legal advice you provide.\n\n3. CODE OF CONDUCT\nComply with Bar Council of India Rules, Advocates Act 1961, LAPOLU community standards. Violations lead to immediate removal.\n\n4. FEES AND PAYOUTS\nRate: Rs.21 per minute. LAPOLU retains platform commission. Weekly payouts via NEFT. GST is your responsibility.\n\n5. CONFIDENTIALITY\nMaintain strict client confidentiality.\n\n6. TERMINATION\nEither party may terminate with 7 days notice.\n\nContact: help@lapolu.com`
+  }
+};
+
+const LEGAL = {
+  privacy: {
+    title: 'Privacy Policy',
+    content: `Last updated: March 2025\n\nLAPOLU Indian Market is committed to protecting your privacy under the Digital Personal Data Protection Act 2023 and the IT Act 2000.\n\nINFORMATION WE COLLECT\nMobile numbers for OTP login, legal queries, language preferences, device info. Your API key is stored only in your browser, never on our servers.\n\nHOW WE USE IT\nTo provide AI legal responses, facilitate lawyer consultations, improve the platform. We never sell your data.\n\nDATA SECURITY\nAll data encrypted via SSL. Session billing stored for 90 days for dispute resolution only.\n\nYOUR RIGHTS\nAccess, correct, erase your data. Withdraw consent. File complaint with Data Protection Board of India.\n\nContact: help@lapolu.com`
+  },
+  terms: {
+    title: 'Terms and Conditions',
+    content: `Governing Law: India\nLast updated: March 2025\n\nBy using LAPOLU, you agree to these terms.\n\n1. ACCEPTANCE\nYou confirm you are 18+ and agree to be legally bound.\n\n2. NATURE OF SERVICE\nLAPOLU provides general legal information only, not legal advice. No attorney-client relationship is created. Always consult a Bar Council advocate.\n\n3. LAWYER CONNECT\nAdvocates are independent professionals. Billed at Rs.21 per minute. LAPOLU is an intermediary only.\n\n4. USER OBLIGATIONS\nDo not use for unlawful purposes. Do not submit false information.\n\n5. GOVERNING LAW\nIndian law. Disputes in Indian courts.\n\nContact: help@lapolu.com`
+  },
+  disclaimer: {
+    title: 'Legal Disclaimer',
+    content: `Please read this disclaimer carefully before using LAPOLU.\n\nNOT LEGAL ADVICE\nAll information from LAPOLU is for general educational purposes only. It is not legal advice. No attorney-client relationship is formed.\n\nAI LIMITATIONS\nAI can make errors and may not reflect current amendments to BNS, BNSS and BSA. Always verify with a qualified advocate before taking legal action.\n\nNO GUARANTEE\nLAPOLU makes no guarantees about legal outcomes. Results depend on specific facts of each case.\n\nADVOCATE INDEPENDENCE\nAdvocates on LAPOLU are independent professionals registered with the Bar Council of India.\n\nEMERGENCIES\nIn emergencies, contact police, courts or legal aid immediately. Do not rely solely on this app.\n\nBy using LAPOLU, you acknowledge and agree to this disclaimer.`
+  },
+  refund: {
+    title: 'Refund Policy',
+    content: `Applicable to Lawyer Connect\nEffective: March 2025\n\nBILLING\nBilled at Rs.21 per minute from session start to end. Partial minutes are billed as full minutes.\n\nREFUND ELIGIBILITY\n- Technical failure on LAPOLU platform\n- Advocate failed to join within 2 minutes\n- Duplicate charges due to payment errors\n- Unauthorized transaction reported within 24 hours\n\nNON-REFUNDABLE\n- Completed sessions regardless of satisfaction\n- Sessions ended by you after receiving advice\n- Connectivity issues on your end\n\nHOW TO REQUEST\nEmail help@lapolu.com within 7 days with session details. Refunds in 5 to 7 business days.\n\nContact: help@lapolu.com`
+  },
+  advocate: {
+    title: 'Advocate Terms',
+    content: `For advocates registered on LAPOLU.\n\n1. ELIGIBILITY\nMust hold valid LLB. Be enrolled with Bar Council of India or State Bar Council. Hold valid Certificate of Practice. Not be under suspension.\n\n2. PLATFORM ROLE\nLAPOLU is a technology intermediary only. You are an independent professional solely responsible for the legal advice you provide.\n\n3. CODE OF CONDUCT\nComply with Bar Council of India Rules, Advocates Act 1961, LAPOLU community standards. Violations lead to immediate removal.\n\n4. FEES AND PAYOUTS\nRate: Rs.21 per minute. LAPOLU retains platform commission. Weekly payouts via NEFT. GST is your responsibility.\n\n5. CONFIDENTIALITY\nMaintain strict client confidentiality.\n\n6. TERMINATION\nEither party may terminate with 7 days notice.\n\nContact: help@lapolu.com`
+  }
+};
+
 export default function HomeScreen() {
   const [lang, setLang] = useState('English');
   const [topic, setTopic] = useState(TOPICS[0].value);
@@ -57,6 +103,7 @@ export default function HomeScreen() {
   const [rtiLetter, setRtiLetter] = useState('');
   const [rtiLoading, setRtiLoading] = useState(false);
   const timerRef = useRef(null);
+  const [legalModal, setLegalModal] = useState(null);
 
   const askAI = async () => {
     if (!question.trim()) { Alert.alert('Please enter a legal question.'); return; }
@@ -298,7 +345,30 @@ export default function HomeScreen() {
             <Text style={s.footerText}>LAPOLU Indian Legal AI</Text>
             <Text style={s.footerSub}>General information only. Not legal advice.</Text>
             <Text style={s.footerContact}>help@lapolu.com</Text>
+            <View style={s.footerBtns}>
+              {['privacy','terms','disclaimer','refund','advocate'].map(key => (
+                <TouchableOpacity key={key} style={s.footerBtn} onPress={() => setLegalModal(key)}>
+                  <Text style={s.footerBtnText}>{LEGAL[key].title}</Text>
+                </TouchableOpacity>
+              ))}
+            </View>
           </View>
+
+          {legalModal && (
+            <View style={s.modalOverlay}>
+              <View style={s.modalBox}>
+                <View style={s.modalHead}>
+                  <Text style={s.modalTitle}>{LEGAL[legalModal].title}</Text>
+                  <TouchableOpacity onPress={() => setLegalModal(null)}>
+                    <Text style={s.modalClose}>x</Text>
+                  </TouchableOpacity>
+                </View>
+                <ScrollView style={s.modalBody}>
+                  <Text style={s.modalText}>{LEGAL[legalModal].content}</Text>
+                </ScrollView>
+              </View>
+            </View>
+          )}
 
         </ScrollView>
       </KeyboardAvoidingView>
@@ -401,4 +471,37 @@ const s = StyleSheet.create({
   footerText:{color:'#fff',fontSize:14,fontWeight:'700'},
   footerSub:{color:'rgba(255,255,255,0.6)',fontSize:11,marginTop:4},
   footerContact:{color:'#F0C38E',fontSize:11,marginTop:4},
+  footerBtns:{flexDirection:'row',flexWrap:'wrap',justifyContent:'center',gap:6,marginTop:14,paddingTop:14,borderTopWidth:1,borderTopColor:'rgba(255,255,255,0.15)'},
+  footerBtn:{borderWidth:1,borderColor:'rgba(255,255,255,0.3)',borderRadius:6,paddingHorizontal:10,paddingVertical:5},
+  footerBtnText:{color:'rgba(255,255,255,0.7)',fontSize:10},
+  modalOverlay:{position:'absolute',top:0,left:0,right:0,bottom:0,backgroundColor:'rgba(0,0,0,0.7)',justifyContent:'center',alignItems:'center',zIndex:999},
+  modalBox:{backgroundColor:'#fff',borderRadius:16,width:'90%',maxHeight:'80%',overflow:'hidden'},
+  modalHead:{backgroundColor:'#48426D',padding:16,flexDirection:'row',justifyContent:'space-between',alignItems:'center'},
+  modalTitle:{color:'#fff',fontSize:17,fontWeight:'700',fontFamily:'serif'},
+  modalClose:{color:'#fff',fontSize:22,fontWeight:'300'},
+  modalBody:{padding:20},
+  modalText:{fontSize:13,color:'#3A3360',lineHeight:22},
+  modalSection:{fontSize:14,color:'#48426D',fontWeight:'700',marginTop:14,marginBottom:4},
+  footerBtns:{flexDirection:'row',flexWrap:'wrap',justifyContent:'center',gap:6,marginTop:14,paddingTop:14,borderTopWidth:1,borderTopColor:'rgba(255,255,255,0.15)'},
+  footerBtn:{borderWidth:1,borderColor:'rgba(255,255,255,0.3)',borderRadius:6,paddingHorizontal:10,paddingVertical:5},
+  footerBtnText:{color:'rgba(255,255,255,0.7)',fontSize:10},
+  modalOverlay:{position:'absolute',top:0,left:0,right:0,bottom:0,backgroundColor:'rgba(0,0,0,0.7)',justifyContent:'center',alignItems:'center',zIndex:999},
+  modalBox:{backgroundColor:'#fff',borderRadius:16,width:'90%',maxHeight:'80%',overflow:'hidden'},
+  modalHead:{backgroundColor:'#48426D',padding:16,flexDirection:'row',justifyContent:'space-between',alignItems:'center'},
+  modalTitle:{color:'#fff',fontSize:17,fontWeight:'700',fontFamily:'serif'},
+  modalClose:{color:'#fff',fontSize:22,fontWeight:'300'},
+  modalBody:{padding:20},
+  modalText:{fontSize:13,color:'#3A3360',lineHeight:22},
+  modalSection:{fontSize:14,color:'#48426D',fontWeight:'700',marginTop:14,marginBottom:4},
+  footerBtns:{flexDirection:'row',flexWrap:'wrap',justifyContent:'center',gap:6,marginTop:14,paddingTop:14,borderTopWidth:1,borderTopColor:'rgba(255,255,255,0.15)'},
+  footerBtn:{borderWidth:1,borderColor:'rgba(255,255,255,0.3)',borderRadius:6,paddingHorizontal:10,paddingVertical:5},
+  footerBtnText:{color:'rgba(255,255,255,0.7)',fontSize:10},
+  modalOverlay:{position:'absolute',top:0,left:0,right:0,bottom:0,backgroundColor:'rgba(0,0,0,0.7)',justifyContent:'center',alignItems:'center',zIndex:999},
+  modalBox:{backgroundColor:'#fff',borderRadius:16,width:'90%',maxHeight:'80%',overflow:'hidden'},
+  modalHead:{backgroundColor:'#48426D',padding:16,flexDirection:'row',justifyContent:'space-between',alignItems:'center'},
+  modalTitle:{color:'#fff',fontSize:17,fontWeight:'700',fontFamily:'serif'},
+  modalClose:{color:'#fff',fontSize:22,fontWeight:'300'},
+  modalBody:{padding:20},
+  modalText:{fontSize:13,color:'#3A3360',lineHeight:22},
+  modalSection:{fontSize:14,color:'#48426D',fontWeight:'700',marginTop:14,marginBottom:4},
 });
