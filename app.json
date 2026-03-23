@@ -15,7 +15,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#1A1A1A"
+        "backgroundColor": "#0A1432"
       },
       "package": "com.lapolu.app"
     },
@@ -31,7 +31,7 @@
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 300,
           "resizeMode": "contain",
-          "backgroundColor": "#1A1A1A"
+          "backgroundColor": "#0A1432"
         }
       ]
     ],
