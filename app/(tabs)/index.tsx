@@ -61,33 +61,150 @@ const LEGAL_DATA = {
   }
 };
 
-// ─── PRO FEATURES CONFIG ───────────────────────────────────────────────────
-// Each feature now has an `action` key that maps to a screen/function
 const PRO_FEATURES = [
-  { icon: '🤖', title: 'Smart AI Legal Advisor', desc: 'AI asks follow-up questions & gives step-by-step guidance', action: 'smartAI' },
-  { icon: '🗺️', title: 'Legal Roadmap', desc: 'Get a clear action plan: Step 1 → Step 2 → Step 3', action: 'roadmap' },
-  { icon: '⚠️', title: 'Risk Detector', desc: 'Paste agreement text, AI finds risks & missing clauses', action: 'riskDetector' },
-  { icon: '📊', title: 'Legal Safety Score', desc: 'AI scores your legal risk level from 1-10', action: 'safetyScore' },
-  { icon: '📄', title: 'Document Engine', desc: 'Generate filled legal documents', action: 'docEngine' },
-  { icon: '🔔', title: 'Legal Reminders', desc: 'Reminders for rent, agreements, court deadlines', action: 'reminders' },
-  { icon: '📁', title: 'Personal Legal Dashboard', desc: 'Track all your problems, documents & steps', action: 'dashboard' },
-  { icon: '📚', title: 'Premium Document Library', desc: 'Access all legal templates & business agreements', action: 'docLibrary' },
-  { icon: '⚖️', title: 'When to Call a Lawyer', desc: 'AI tells you exactly when you need professional help', action: 'lawyerAdvice' },
-  { icon: '🚀', title: 'Priority AI Access', desc: 'Faster, better AI responses over free users', action: 'priorityAI' },
+  { title: 'Smart AI Legal Advisor', desc: 'AI asks follow-up questions and gives step-by-step guidance', action: 'smartAI' },
+  { title: 'Legal Roadmap', desc: 'Get a clear action plan: Step 1, Step 2, Step 3', action: 'roadmap' },
+  { title: 'Risk Detector', desc: 'Paste agreement text, AI finds risks and missing clauses', action: 'riskDetector' },
+  { title: 'Legal Safety Score', desc: 'AI scores your legal risk level from 1 to 10', action: 'safetyScore' },
+  { title: 'Document Engine', desc: 'Generate filled legal documents instantly', action: 'docEngine' },
+  { title: 'Legal Reminders', desc: 'Reminders for rent, agreements, court deadlines', action: 'reminders' },
+  { title: 'Personal Legal Dashboard', desc: 'Track all your problems, documents and steps', action: 'dashboard' },
+  { title: 'Premium Document Library', desc: 'Access all legal templates and business agreements', action: 'docLibrary' },
+  { title: 'When to Call a Lawyer', desc: 'AI tells you exactly when you need professional help', action: 'lawyerAdvice' },
+  { title: 'Priority AI Access', desc: 'Faster, better AI responses over free users', action: 'priorityAI' },
 ];
 
-// ─── DOCUMENT LIBRARY ─────────────────────────────────────────────────────
+// Document library — clean, no emoji icons
 const DOC_LIBRARY = [
-  { icon: '🏠', title: 'Rent Agreement', desc: 'Standard residential rent agreement (11 months)' },
-  { icon: '💼', title: 'Employment Contract', desc: 'Offer letter & employment terms' },
-  { icon: '🤝', title: 'Partnership Deed', desc: 'Business partnership agreement' },
-  { icon: '📜', title: 'Legal Notice', desc: 'General purpose legal notice template' },
-  { icon: '🔒', title: 'NDA Agreement', desc: 'Non-disclosure / confidentiality agreement' },
-  { icon: '🏢', title: 'Lease Deed', desc: 'Commercial property lease deed' },
-  { icon: '💸', title: 'Loan Agreement', desc: 'Personal loan agreement between individuals' },
-  { icon: '📋', title: 'Will / Testament', desc: 'Simple last will and testament' },
-  { icon: '🚗', title: 'Vehicle Sale Deed', desc: 'Sale agreement for motor vehicles' },
-  { icon: '👨‍👩‍👧', title: 'Divorce MOU', desc: 'Mutual consent divorce memorandum' },
+  {
+    title: 'Rent Agreement',
+    subtitle: 'Residential',
+    desc: 'Standard 11-month residential rent agreement as per Indian law',
+    fields: [
+      {key:'landlord', label:'Landlord Full Name', placeholder:'e.g. Ramesh Kumar'},
+      {key:'tenant', label:'Tenant Full Name', placeholder:'e.g. Priya Sharma'},
+      {key:'property', label:'Property Address', placeholder:'Full address with PIN code'},
+      {key:'rent', label:'Monthly Rent (Rs.)', placeholder:'e.g. 15000'},
+      {key:'deposit', label:'Security Deposit (Rs.)', placeholder:'e.g. 45000'},
+      {key:'startDate', label:'Agreement Start Date', placeholder:'e.g. 01/04/2025'},
+    ]
+  },
+  {
+    title: 'Employment Contract',
+    subtitle: 'Offer Letter',
+    desc: 'Offer letter and employment terms for new employee',
+    fields: [
+      {key:'company', label:'Company Name', placeholder:'e.g. ABC Technologies Pvt Ltd'},
+      {key:'employee', label:'Employee Full Name', placeholder:'e.g. Suresh Patel'},
+      {key:'designation', label:'Designation', placeholder:'e.g. Software Engineer'},
+      {key:'salary', label:'Monthly Salary (Rs.)', placeholder:'e.g. 50000'},
+      {key:'startDate', label:'Joining Date', placeholder:'e.g. 01/05/2025'},
+      {key:'location', label:'Work Location', placeholder:'e.g. Bengaluru, Karnataka'},
+    ]
+  },
+  {
+    title: 'Partnership Deed',
+    subtitle: 'Business',
+    desc: 'Business partnership agreement between two or more parties',
+    fields: [
+      {key:'partner1', label:'Partner 1 Full Name', placeholder:'e.g. Rajesh Kumar'},
+      {key:'partner2', label:'Partner 2 Full Name', placeholder:'e.g. Anita Singh'},
+      {key:'businessName', label:'Business / Firm Name', placeholder:'e.g. Kumar and Singh Enterprises'},
+      {key:'capital1', label:'Partner 1 Capital Contribution (Rs.)', placeholder:'e.g. 500000'},
+      {key:'capital2', label:'Partner 2 Capital Contribution (Rs.)', placeholder:'e.g. 500000'},
+      {key:'profitShare', label:'Profit Sharing Ratio', placeholder:'e.g. 50:50'},
+    ]
+  },
+  {
+    title: 'Legal Notice',
+    subtitle: 'General Purpose',
+    desc: 'Formal legal notice to any person or organisation',
+    fields: [
+      {key:'sender', label:'Your Full Name', placeholder:'e.g. Ramesh Kumar'},
+      {key:'senderAddr', label:'Your Address', placeholder:'Full address with PIN code'},
+      {key:'recipient', label:'Recipient Name', placeholder:'e.g. XYZ Company or Person Name'},
+      {key:'recipientAddr', label:'Recipient Address', placeholder:'Full address'},
+      {key:'subject', label:'Subject of Notice', placeholder:'e.g. Recovery of dues, breach of contract'},
+      {key:'details', label:'Details of Grievance', placeholder:'Describe the issue clearly...', multiline: true},
+    ]
+  },
+  {
+    title: 'NDA Agreement',
+    subtitle: 'Confidentiality',
+    desc: 'Non-disclosure and confidentiality agreement',
+    fields: [
+      {key:'party1', label:'Disclosing Party Name', placeholder:'e.g. ABC Technologies Pvt Ltd'},
+      {key:'party2', label:'Receiving Party Name', placeholder:'e.g. Freelancer or Company Name'},
+      {key:'purpose', label:'Purpose of Disclosure', placeholder:'e.g. Software development project'},
+      {key:'duration', label:'Confidentiality Duration', placeholder:'e.g. 2 years from signing date'},
+      {key:'date', label:'Agreement Date', placeholder:'e.g. 01/04/2025'},
+    ]
+  },
+  {
+    title: 'Lease Deed',
+    subtitle: 'Commercial',
+    desc: 'Commercial property lease deed for office or shop',
+    fields: [
+      {key:'lessor', label:'Lessor (Owner) Name', placeholder:'e.g. Mahesh Properties Pvt Ltd'},
+      {key:'lessee', label:'Lessee (Tenant) Name', placeholder:'e.g. Startup India Pvt Ltd'},
+      {key:'property', label:'Property Description', placeholder:'e.g. Office No. 302, 3rd Floor, MG Road'},
+      {key:'rent', label:'Monthly Rent (Rs.)', placeholder:'e.g. 50000'},
+      {key:'duration', label:'Lease Duration', placeholder:'e.g. 3 years from 01/04/2025'},
+      {key:'deposit', label:'Security Deposit (Rs.)', placeholder:'e.g. 150000'},
+    ]
+  },
+  {
+    title: 'Loan Agreement',
+    subtitle: 'Personal',
+    desc: 'Personal loan agreement between two individuals',
+    fields: [
+      {key:'lender', label:'Lender Full Name', placeholder:'e.g. Suresh Kumar'},
+      {key:'borrower', label:'Borrower Full Name', placeholder:'e.g. Priya Sharma'},
+      {key:'amount', label:'Loan Amount (Rs.)', placeholder:'e.g. 100000'},
+      {key:'interest', label:'Interest Rate (% per annum)', placeholder:'e.g. 12'},
+      {key:'repayDate', label:'Repayment Date', placeholder:'e.g. 01/04/2026'},
+      {key:'date', label:'Agreement Date', placeholder:'e.g. 01/04/2025'},
+    ]
+  },
+  {
+    title: 'Will and Testament',
+    subtitle: 'Estate Planning',
+    desc: 'Simple last will and testament as per Indian Succession Act',
+    fields: [
+      {key:'testator', label:'Your Full Name (Testator)', placeholder:'e.g. Ramesh Kumar'},
+      {key:'address', label:'Your Address', placeholder:'Full address'},
+      {key:'beneficiary1', label:'Primary Beneficiary Name', placeholder:'e.g. Priya Kumar (Wife)'},
+      {key:'beneficiary2', label:'Secondary Beneficiary Name', placeholder:'e.g. Rohan Kumar (Son)'},
+      {key:'executor', label:'Executor Name', placeholder:'Person who will carry out your wishes'},
+      {key:'assets', label:'Description of Assets', placeholder:'e.g. House at MG Road, Bank accounts, Gold jewellery...', multiline: true},
+    ]
+  },
+  {
+    title: 'Vehicle Sale Deed',
+    subtitle: 'Motor Vehicle',
+    desc: 'Sale agreement for motor vehicles as per MV Act',
+    fields: [
+      {key:'seller', label:'Seller Full Name', placeholder:'e.g. Ramesh Kumar'},
+      {key:'buyer', label:'Buyer Full Name', placeholder:'e.g. Suresh Patel'},
+      {key:'vehicle', label:'Vehicle Description', placeholder:'e.g. Maruti Swift Dzire, 2020, White'},
+      {key:'regNo', label:'Registration Number', placeholder:'e.g. KA 01 AB 1234'},
+      {key:'amount', label:'Sale Amount (Rs.)', placeholder:'e.g. 500000'},
+      {key:'date', label:'Sale Date', placeholder:'e.g. 01/04/2025'},
+    ]
+  },
+  {
+    title: 'Divorce MOU',
+    subtitle: 'Mutual Consent',
+    desc: 'Mutual consent divorce memorandum of understanding',
+    fields: [
+      {key:'husband', label:'Husband Full Name', placeholder:'e.g. Ramesh Kumar'},
+      {key:'wife', label:'Wife Full Name', placeholder:'e.g. Priya Kumar'},
+      {key:'marriageDate', label:'Date of Marriage', placeholder:'e.g. 15/06/2018'},
+      {key:'custody', label:'Child Custody Arrangement', placeholder:'e.g. Joint custody or Sole custody'},
+      {key:'alimony', label:'Alimony Amount (if any)', placeholder:'e.g. Rs.10000 per month or None'},
+      {key:'date', label:'MOU Date', placeholder:'e.g. 01/04/2025'},
+    ]
+  },
 ];
 
 export default function HomeScreen() {
@@ -109,17 +226,16 @@ export default function HomeScreen() {
   const [legalModal, setLegalModal] = useState(null);
   const fadeAnim = useRef(new Animated.Value(0)).current;
 
-  // ─── PRO FEATURE SCREENS ──────────────────────────────────────────────────
-  const [proScreen, setProScreen] = useState(null); // null = show PRO tab list
+  const [proScreen, setProScreen] = useState(null);
 
   // Risk Detector
   const [riskText, setRiskText] = useState('');
   const [riskResult, setRiskResult] = useState(null);
   const [riskLoading, setRiskLoading] = useState(false);
 
-  // Document Engine
-  const [docType, setDocType] = useState('Rent Agreement');
-  const [docForm, setDocForm] = useState({party1:'', party2:'', date:'', details:''});
+  // Document Library - selected document
+  const [selectedDoc, setSelectedDoc] = useState(null);
+  const [docFields, setDocFields] = useState({});
   const [docResult, setDocResult] = useState('');
   const [docLoading, setDocLoading] = useState(false);
 
@@ -145,14 +261,12 @@ export default function HomeScreen() {
     return () => clearTimeout(t);
   }, []);
 
-  // ─── GUARD: require PRO + API key ────────────────────────────────────────
   const requireProAndKey = () => {
     if (!isPro) { setShowProModal(true); return false; }
     if (!apiKey.trim()) { setShowApiInput(true); Alert.alert('Enter your Anthropic API key first.'); return false; }
     return true;
   };
 
-  // ─── CALL ANTHROPIC API ──────────────────────────────────────────────────
   const callAI = async (systemPrompt, userPrompt, maxTokens = 2000) => {
     const res = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
@@ -164,7 +278,6 @@ export default function HomeScreen() {
     return data.content.map(b => b.text || '').join('');
   };
 
-  // ─── SMART AI / ROADMAP / SCORE (main Ask AI) ────────────────────────────
   const askAI = async () => {
     if (!question.trim()) { Alert.alert('Please explain your legal problem.'); return; }
     if (!apiKey.trim()) { setShowApiInput(true); Alert.alert('Please enter your Anthropic API key first.'); return; }
@@ -180,7 +293,6 @@ export default function HomeScreen() {
         try {
           const parsed = JSON.parse(raw);
           setAnswer({ type: 'pro', ...parsed });
-          // Auto-save to dashboard
           setSavedCases(prev => [{
             id: Date.now(),
             question: question.slice(0, 60) + (question.length > 60 ? '...' : ''),
@@ -201,7 +313,6 @@ export default function HomeScreen() {
     setLoading(false);
   };
 
-  // ─── RISK DETECTOR ───────────────────────────────────────────────────────
   const runRiskDetector = async () => {
     if (!requireProAndKey()) return;
     if (!riskText.trim()) { Alert.alert('Please paste your agreement text.'); return; }
@@ -217,15 +328,21 @@ export default function HomeScreen() {
     setRiskLoading(false);
   };
 
-  // ─── DOCUMENT ENGINE ─────────────────────────────────────────────────────
   const generateDoc = async () => {
     if (!requireProAndKey()) return;
-    if (!docForm.party1 || !docForm.party2) { Alert.alert('Please fill Party 1 and Party 2 names.'); return; }
+    if (!selectedDoc) return;
+    const required = selectedDoc.fields.filter(f => !f.multiline).slice(0,2);
+    const missing = required.filter(f => !docFields[f.key]);
+    if (missing.length > 0) {
+      Alert.alert('Please fill ' + missing.map(f => f.label).join(' and '));
+      return;
+    }
     setDocLoading(true); setDocResult('');
     try {
-      const sys = `You are a legal document drafting expert for India. Generate a complete formal ${docType} in plain text. Include all standard clauses as per Indian law. Output only the document text.`;
-      const prompt = `Generate a ${docType} with these details:\nParty 1: ${docForm.party1}\nParty 2: ${docForm.party2}\nDate: ${docForm.date || new Date().toLocaleDateString('en-IN')}\nAdditional Details: ${docForm.details || 'Standard terms apply'}`;
-      const raw = await callAI(sys, prompt, 2000);
+      const fieldDetails = selectedDoc.fields.map(f => `${f.label}: ${docFields[f.key] || 'Not specified'}`).join('\n');
+      const sys = `You are a legal document drafting expert for India. Generate a complete formal ${selectedDoc.title} in plain text. Include all standard clauses as per Indian law. Make it professional, legally sound and complete. Output only the document text, no commentary.`;
+      const prompt = `Generate a ${selectedDoc.title} with these details:\n${fieldDetails}\n\nDate: ${new Date().toLocaleDateString('en-IN')}`;
+      const raw = await callAI(sys, prompt, 2500);
       setDocResult(raw);
     } catch(e) {
       Alert.alert('Error: ' + (e.message || 'Try again.'));
@@ -233,7 +350,6 @@ export default function HomeScreen() {
     setDocLoading(false);
   };
 
-  // ─── LAWYER ADVICE ───────────────────────────────────────────────────────
   const askLawyerAdvice = async () => {
     if (!requireProAndKey()) return;
     if (!lawyerQ.trim()) { Alert.alert('Please describe your situation.'); return; }
@@ -249,7 +365,6 @@ export default function HomeScreen() {
     setLawyerLoading(false);
   };
 
-  // ─── GENERATE RTI ────────────────────────────────────────────────────────
   const generateRTI = async () => {
     const {name,mobile,address,state,dept,info} = rtiForm;
     if (!name||!mobile||!address||!state||!dept||!info) { Alert.alert('Please fill all required fields.'); return; }
@@ -266,7 +381,6 @@ export default function HomeScreen() {
     setRtiLoading(false);
   };
 
-  // ─── HELPERS ─────────────────────────────────────────────────────────────
   const getRiskColor = (score) => {
     if (score <= 3) return COLORS.green;
     if (score <= 6) return COLORS.orange;
@@ -278,7 +392,6 @@ export default function HomeScreen() {
     return COLORS.redBg;
   };
 
-  // ─── HANDLE PRO FEATURE TAP ──────────────────────────────────────────────
   const handleProFeatureTap = (action) => {
     if (!isPro) { setShowProModal(true); return; }
     switch(action) {
@@ -286,33 +399,21 @@ export default function HomeScreen() {
       case 'roadmap':
       case 'safetyScore':
         setActiveTab('ai');
-        Alert.alert('PRO Active ✅', 'Ask your question on the AI tab. You will get Roadmap + Risk Score + Smart Advisor.');
+        Alert.alert('PRO Active', 'Ask your question on the AI tab. You will get Roadmap, Risk Score and Smart Advisor.');
         break;
-      case 'riskDetector':
-        setProScreen('riskDetector');
-        break;
-      case 'docEngine':
-        setProScreen('docEngine');
-        break;
-      case 'reminders':
-        setProScreen('reminders');
-        break;
-      case 'dashboard':
-        setProScreen('dashboard');
-        break;
-      case 'docLibrary':
-        setProScreen('docLibrary');
-        break;
-      case 'lawyerAdvice':
-        setProScreen('lawyerAdvice');
-        break;
+      case 'riskDetector': setProScreen('riskDetector'); break;
+      case 'docEngine': setProScreen('docLibrary'); break;
+      case 'reminders': setProScreen('reminders'); break;
+      case 'dashboard': setProScreen('dashboard'); break;
+      case 'docLibrary': setProScreen('docLibrary'); break;
+      case 'lawyerAdvice': setProScreen('lawyerAdvice'); break;
       case 'priorityAI':
-        Alert.alert('🚀 Priority AI Active', 'You are already using Priority AI Access. Your queries are processed with the best model (claude-sonnet-4).');
+        Alert.alert('Priority AI Active', 'You are already using Priority AI Access with the best Claude model.');
         break;
     }
   };
 
-  // ─── WELCOME SCREEN ──────────────────────────────────────────────────────
+  // Welcome screen
   if (showWelcome) {
     return (
       <SafeAreaView style={s.safe}>
@@ -326,17 +427,18 @@ export default function HomeScreen() {
     );
   }
 
-  // ─── PRO FEATURE SCREENS ──────────────────────────────────────────────────
+  // PRO sub-screens
   const renderProScreen = () => {
-    // ── RISK DETECTOR ──
+
+    // RISK DETECTOR
     if (proScreen === 'riskDetector') {
       return (
         <ScrollView style={s.scroll}>
           <View style={s.section}>
             <TouchableOpacity onPress={() => setProScreen(null)} style={s.backBtn}>
-              <Text style={s.backBtnText}>← Back</Text>
+              <Text style={s.backBtnText}>Back</Text>
             </TouchableOpacity>
-            <Text style={s.proScreenTitle}>⚠️ Risk Detector</Text>
+            <Text style={s.proScreenTitle}>Risk Detector</Text>
             <Text style={s.proScreenSub}>Paste any agreement or contract. AI will find risks and missing clauses.</Text>
             <TextInput
               style={[s.rtiInput, {height: 160, marginBottom: 12}]}
@@ -352,10 +454,9 @@ export default function HomeScreen() {
 
             {riskResult && (
               <View style={{marginTop: 16}}>
-                {/* Verdict */}
                 <View style={[s.scoreBox, {backgroundColor: getRiskBg(riskResult.score), marginBottom: 12}]}>
                   <View style={s.scoreRow}>
-                    <Text style={s.scoreTitle}>📊 Risk Score</Text>
+                    <Text style={s.scoreTitle}>Risk Score</Text>
                     <View style={[s.scoreBadge, {backgroundColor: getRiskColor(riskResult.score)}]}>
                       <Text style={s.scoreBadgeText}>{riskResult.score}/10</Text>
                     </View>
@@ -365,10 +466,8 @@ export default function HomeScreen() {
                     <View style={[s.scoreBarFill, {width:`${riskResult.score*10}%`, backgroundColor: getRiskColor(riskResult.score)}]}/>
                   </View>
                 </View>
-
-                {/* Risks found */}
                 <View style={[s.answerBox, {marginBottom: 12}]}>
-                  <Text style={[s.answerTitle, {color: COLORS.red, marginBottom: 10}]}>🔴 Risks Found</Text>
+                  <Text style={[s.answerTitle, {color: COLORS.red, marginBottom: 10}]}>Risks Found</Text>
                   {riskResult.risks.map((r, i) => (
                     <View key={i} style={{flexDirection:'row', marginBottom: 8, gap: 8}}>
                       <Text style={{color: COLORS.red, fontWeight:'700'}}>•</Text>
@@ -376,10 +475,8 @@ export default function HomeScreen() {
                     </View>
                   ))}
                 </View>
-
-                {/* Missing clauses */}
                 <View style={[s.answerBox, {marginBottom: 12}]}>
-                  <Text style={[s.answerTitle, {color: COLORS.orange, marginBottom: 10}]}>⚠️ Missing Clauses</Text>
+                  <Text style={[s.answerTitle, {color: COLORS.orange, marginBottom: 10}]}>Missing Clauses</Text>
                   {riskResult.missing.map((m, i) => (
                     <View key={i} style={{flexDirection:'row', marginBottom: 8, gap: 8}}>
                       <Text style={{color: COLORS.orange, fontWeight:'700'}}>•</Text>
@@ -387,10 +484,8 @@ export default function HomeScreen() {
                     </View>
                   ))}
                 </View>
-
-                {/* Suggestion */}
                 <View style={[s.answerBox, {backgroundColor: COLORS.greenBg, borderColor: COLORS.green}]}>
-                  <Text style={[s.answerTitle, {color: COLORS.green, marginBottom: 6}]}>✅ Recommendation</Text>
+                  <Text style={[s.answerTitle, {color: COLORS.green, marginBottom: 6}]}>Recommendation</Text>
                   <Text style={{fontSize:13, color: COLORS.ink2, lineHeight:20}}>{riskResult.suggestion}</Text>
                 </View>
               </View>
@@ -400,71 +495,121 @@ export default function HomeScreen() {
       );
     }
 
-    // ── DOCUMENT ENGINE ──
-    if (proScreen === 'docEngine') {
-      const docTypes = ['Rent Agreement','Employment Contract','Partnership Deed','Legal Notice','NDA Agreement','Loan Agreement'];
+    // DOCUMENT LIBRARY — premium, no emoji icons
+    if (proScreen === 'docLibrary') {
       return (
         <ScrollView style={s.scroll}>
           <View style={s.section}>
-            <TouchableOpacity onPress={() => { setProScreen(null); setDocResult(''); }} style={s.backBtn}>
-              <Text style={s.backBtnText}>← Back</Text>
+            <TouchableOpacity onPress={() => { setProScreen(null); setSelectedDoc(null); setDocResult(''); }} style={s.backBtn}>
+              <Text style={s.backBtnText}>Back</Text>
             </TouchableOpacity>
-            <Text style={s.proScreenTitle}>📄 Document Engine</Text>
-            <Text style={s.proScreenSub}>Generate professional legal documents instantly.</Text>
+            <Text style={s.proScreenTitle}>Document Library</Text>
+            <Text style={s.proScreenSub}>Select a document to generate. Fill in the details and get a ready-to-use legal document.</Text>
 
-            <Text style={s.sectionLabel}>Document Type</Text>
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} style={s.chipRow}>
-              {docTypes.map(d => (
-                <TouchableOpacity key={d} style={[s.chip, docType===d && s.chipActive]} onPress={() => setDocType(d)}>
-                  <Text style={[s.chipText, docType===d && s.chipTextActive]}>{d}</Text>
-                </TouchableOpacity>
-              ))}
-            </ScrollView>
-
-            {[
-              {key:'party1', label:'Party 1 / Your Name', placeholder:'Full name'},
-              {key:'party2', label:'Party 2 / Other Party Name', placeholder:'Full name'},
-              {key:'date', label:'Agreement Date', placeholder:'e.g. 01/04/2025'},
-              {key:'details', label:'Key Details (optional)', placeholder:'e.g. Rent Rs.15000/month, 2BHK flat...'},
-            ].map(f => (
-              <View key={f.key} style={s.rtiField}>
-                <Text style={s.rtiLabel}>{f.label}</Text>
-                <TextInput style={[s.rtiInput, f.key==='details'&&{height:80}]} value={docForm[f.key]} onChangeText={v=>setDocForm({...docForm,[f.key]:v})} placeholder={f.placeholder} placeholderTextColor={COLORS.ink3} multiline={f.key==='details'}/>
-              </View>
+            {DOC_LIBRARY.map((doc, i) => (
+              <TouchableOpacity
+                key={i}
+                style={s.docCard}
+                onPress={() => {
+                  setSelectedDoc(doc);
+                  setDocFields({});
+                  setDocResult('');
+                  setProScreen('docForm');
+                }}
+              >
+                <View style={s.docCardLeft}>
+                  <Text style={s.docCardTitle}>{doc.title}</Text>
+                  <Text style={s.docCardSubtitle}>{doc.subtitle}</Text>
+                  <Text style={s.docCardDesc}>{doc.desc}</Text>
+                </View>
+                <View style={s.docCardArrow}>
+                  <Text style={s.docCardArrowText}>→</Text>
+                </View>
+              </TouchableOpacity>
             ))}
-
-            <TouchableOpacity style={s.rtiGenBtn} onPress={generateDoc} disabled={docLoading}>
-              {docLoading ? <ActivityIndicator color="#fff"/> : <Text style={s.rtiGenBtnText}>Generate Document</Text>}
-            </TouchableOpacity>
-
-            {docResult ? (
-              <View style={{marginTop:16}}>
-                <Text style={s.rtiReady}>✓ Document Ready!</Text>
-                <ScrollView style={s.rtiDraft} nestedScrollEnabled>
-                  <Text style={s.rtiDraftText}>{docResult}</Text>
-                </ScrollView>
-                <TouchableOpacity style={s.rtiEditBtn} onPress={() => setDocResult('')}>
-                  <Text style={s.rtiEditBtnText}>Generate New</Text>
-                </TouchableOpacity>
-              </View>
-            ) : null}
           </View>
         </ScrollView>
       );
     }
 
-    // ── REMINDERS ──
+    // DOCUMENT FORM — editable fields for selected document
+    if (proScreen === 'docForm' && selectedDoc) {
+      return (
+        <ScrollView style={s.scroll}>
+          <View style={s.section}>
+            <TouchableOpacity onPress={() => { setProScreen('docLibrary'); setDocResult(''); }} style={s.backBtn}>
+              <Text style={s.backBtnText}>Back to Library</Text>
+            </TouchableOpacity>
+
+            <View style={s.docFormHeader}>
+              <Text style={s.docFormTitle}>{selectedDoc.title}</Text>
+              <Text style={s.docFormSubtitle}>{selectedDoc.subtitle}</Text>
+            </View>
+
+            {!docResult ? (
+              <View>
+                <Text style={s.docFormInstruction}>Fill in the details below. All fields help generate a more accurate and complete document.</Text>
+
+                {selectedDoc.fields.map(field => (
+                  <View key={field.key} style={s.rtiField}>
+                    <Text style={s.rtiLabel}>{field.label}</Text>
+                    <TextInput
+                      style={[s.rtiInput, field.multiline && {height: 90, textAlignVertical: 'top'}]}
+                      value={docFields[field.key] || ''}
+                      onChangeText={v => setDocFields({...docFields, [field.key]: v})}
+                      placeholder={field.placeholder}
+                      placeholderTextColor={COLORS.ink3}
+                      multiline={field.multiline}
+                      keyboardType={field.key === 'rent' || field.key === 'amount' || field.key === 'salary' || field.key === 'deposit' || field.key === 'capital1' || field.key === 'capital2' ? 'numeric' : 'default'}
+                    />
+                  </View>
+                ))}
+
+                <TouchableOpacity style={s.rtiGenBtn} onPress={generateDoc} disabled={docLoading}>
+                  {docLoading
+                    ? <ActivityIndicator color="#fff"/>
+                    : <Text style={s.rtiGenBtnText}>Generate {selectedDoc.title}</Text>
+                  }
+                </TouchableOpacity>
+              </View>
+            ) : (
+              <View>
+                <View style={s.docReadyBadge}>
+                  <Text style={s.docReadyText}>Document Ready</Text>
+                </View>
+                <Text style={s.docReadySub}>Review your document below. You can copy the text and use it.</Text>
+                <ScrollView style={s.rtiDraft} nestedScrollEnabled>
+                  <Text style={s.rtiDraftText}>{docResult}</Text>
+                </ScrollView>
+                <TouchableOpacity style={s.rtiPortalBtn} onPress={() => {
+                  Alert.alert('Document copied', 'Copy the text above and paste it in Google Docs or Word to edit and print.');
+                }}>
+                  <Text style={s.rtiPortalBtnText}>How to Use This Document</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={s.rtiEditBtn} onPress={() => setDocResult('')}>
+                  <Text style={s.rtiEditBtnText}>Edit Details and Regenerate</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={[s.rtiEditBtn, {marginTop: 0}]} onPress={() => { setProScreen('docLibrary'); setDocResult(''); setSelectedDoc(null); }}>
+                  <Text style={s.rtiEditBtnText}>Generate Another Document</Text>
+                </TouchableOpacity>
+                <Text style={s.rtiTip}>Tip: This document is AI-generated. Have a lawyer review it before signing for important matters.</Text>
+              </View>
+            )}
+          </View>
+        </ScrollView>
+      );
+    }
+
+    // REMINDERS
     if (proScreen === 'reminders') {
       return (
         <ScrollView style={s.scroll}>
           <View style={s.section}>
             <TouchableOpacity onPress={() => setProScreen(null)} style={s.backBtn}>
-              <Text style={s.backBtnText}>← Back</Text>
+              <Text style={s.backBtnText}>Back</Text>
             </TouchableOpacity>
-            <Text style={s.proScreenTitle}>🔔 Legal Reminders</Text>
+            <Text style={s.proScreenTitle}>Legal Reminders</Text>
             <Text style={s.proScreenSub}>Set reminders for court dates, rent, agreements and deadlines.</Text>
-
-            {/* Add new reminder */}
             <View style={[s.answerBox, {marginBottom: 16}]}>
               <Text style={[s.sectionLabel, {marginTop: 0}]}>Add New Reminder</Text>
               <TextInput style={[s.rtiInput, {marginBottom:8}]} value={newRemTitle} onChangeText={setNewRemTitle} placeholder="e.g. Court hearing - Session Court" placeholderTextColor={COLORS.ink3}/>
@@ -477,18 +622,17 @@ export default function HomeScreen() {
                 <Text style={s.rtiGenBtnText}>Add Reminder</Text>
               </TouchableOpacity>
             </View>
-
             {reminders.map(rem => (
               <View key={rem.id} style={[s.quickCard, rem.done && {opacity:0.5}]}>
                 <View style={{flex:1}}>
                   <Text style={[s.quickText, {fontWeight:'600', color: COLORS.ink}]}>{rem.title}</Text>
-                  <Text style={{fontSize:12, color: COLORS.ink3, marginTop:2}}>📅 {rem.date}</Text>
+                  <Text style={{fontSize:12, color: COLORS.ink3, marginTop:2}}>{rem.date}</Text>
                 </View>
                 <TouchableOpacity onPress={() => setReminders(prev => prev.map(r => r.id===rem.id ? {...r, done:!r.done} : r))} style={{marginRight:10}}>
                   <Text style={{fontSize:20}}>{rem.done ? '✅' : '⬜'}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => setReminders(prev => prev.filter(r => r.id !== rem.id))}>
-                  <Text style={{fontSize:18, color: COLORS.red}}>🗑️</Text>
+                  <Text style={{fontSize:16, color: COLORS.red, fontWeight:'700'}}>✕</Text>
                 </TouchableOpacity>
               </View>
             ))}
@@ -498,20 +642,18 @@ export default function HomeScreen() {
       );
     }
 
-    // ── DASHBOARD ──
+    // DASHBOARD
     if (proScreen === 'dashboard') {
       return (
         <ScrollView style={s.scroll}>
           <View style={s.section}>
             <TouchableOpacity onPress={() => setProScreen(null)} style={s.backBtn}>
-              <Text style={s.backBtnText}>← Back</Text>
+              <Text style={s.backBtnText}>Back</Text>
             </TouchableOpacity>
-            <Text style={s.proScreenTitle}>📁 Personal Legal Dashboard</Text>
+            <Text style={s.proScreenTitle}>Legal Dashboard</Text>
             <Text style={s.proScreenSub}>All your cases and queries are saved here automatically.</Text>
-
             {savedCases.length === 0 ? (
               <View style={[s.answerBox, {alignItems:'center', paddingVertical:30}]}>
-                <Text style={{fontSize:40, marginBottom:12}}>📂</Text>
                 <Text style={{fontSize:14, color: COLORS.ink2, textAlign:'center'}}>No cases yet.</Text>
                 <Text style={{fontSize:12, color: COLORS.ink3, textAlign:'center', marginTop:6}}>Ask a question on the AI tab and it will appear here.</Text>
                 <TouchableOpacity style={[s.rtiGenBtn, {marginTop:16, paddingHorizontal:20}]} onPress={() => setActiveTab('ai')}>
@@ -524,9 +666,9 @@ export default function HomeScreen() {
                 <View style={{flexDirection:'row', gap:8, flexWrap:'wrap', marginTop:4}}>
                   <View style={s.tag}><Text style={s.tagText}>{c.topic.split(' ')[0]}</Text></View>
                   {c.score && <View style={[s.tag, {backgroundColor: getRiskBg(c.score), borderColor: getRiskColor(c.score)}]}>
-                    <Text style={[s.tagText, {color: getRiskColor(c.score)}]}>Risk: {c.score}/10</Text>
+                    <Text style={[s.tagText, {color: getRiskColor(c.score)}]}>Risk {c.score}/10</Text>
                   </View>}
-                  <View style={s.tag}><Text style={s.tagText}>📅 {c.date}</Text></View>
+                  <View style={s.tag}><Text style={s.tagText}>{c.date}</Text></View>
                 </View>
               </View>
             ))}
@@ -535,43 +677,16 @@ export default function HomeScreen() {
       );
     }
 
-    // ── DOCUMENT LIBRARY ──
-    if (proScreen === 'docLibrary') {
-      return (
-        <ScrollView style={s.scroll}>
-          <View style={s.section}>
-            <TouchableOpacity onPress={() => setProScreen(null)} style={s.backBtn}>
-              <Text style={s.backBtnText}>← Back</Text>
-            </TouchableOpacity>
-            <Text style={s.proScreenTitle}>📚 Document Library</Text>
-            <Text style={s.proScreenSub}>Tap any template to generate it using the Document Engine.</Text>
-
-            {DOC_LIBRARY.map((d, i) => (
-              <TouchableOpacity key={i} style={s.quickCard} onPress={() => { setDocType(d.title); setProScreen('docEngine'); }}>
-                <Text style={{fontSize:24, marginRight:12}}>{d.icon}</Text>
-                <View style={{flex:1}}>
-                  <Text style={{fontSize:13, fontWeight:'700', color: COLORS.ink}}>{d.title}</Text>
-                  <Text style={{fontSize:11, color: COLORS.ink3, marginTop:2}}>{d.desc}</Text>
-                </View>
-                <Text style={s.quickArrow}>→</Text>
-              </TouchableOpacity>
-            ))}
-          </View>
-        </ScrollView>
-      );
-    }
-
-    // ── LAWYER ADVICE ──
+    // LAWYER ADVICE
     if (proScreen === 'lawyerAdvice') {
       return (
         <ScrollView style={s.scroll}>
           <View style={s.section}>
             <TouchableOpacity onPress={() => { setProScreen(null); setLawyerResult(null); }} style={s.backBtn}>
-              <Text style={s.backBtnText}>← Back</Text>
+              <Text style={s.backBtnText}>Back</Text>
             </TouchableOpacity>
-            <Text style={s.proScreenTitle}>⚖️ When to Call a Lawyer</Text>
+            <Text style={s.proScreenTitle}>When to Call a Lawyer</Text>
             <Text style={s.proScreenSub}>Describe your situation. AI tells you if you need a lawyer and what type.</Text>
-
             <TextInput
               style={[s.rtiInput, {height:120, marginBottom:12}]}
               value={lawyerQ}
@@ -583,26 +698,22 @@ export default function HomeScreen() {
             <TouchableOpacity style={s.rtiGenBtn} onPress={askLawyerAdvice} disabled={lawyerLoading}>
               {lawyerLoading ? <ActivityIndicator color="#fff"/> : <Text style={s.rtiGenBtnText}>Get Advice</Text>}
             </TouchableOpacity>
-
             {lawyerResult && (
               <View style={{marginTop:16}}>
-                {/* Verdict */}
                 <View style={[s.lawyerBox, {
                   backgroundColor: lawyerResult.needed==='YES' ? COLORS.redBg : lawyerResult.needed==='MAYBE' ? COLORS.orangeBg : COLORS.greenBg,
                   marginBottom:12
                 }]}>
                   <Text style={s.lawyerBoxTitle}>
-                    {lawyerResult.needed==='YES' ? '🔴 Lawyer Needed' : lawyerResult.needed==='MAYBE' ? '🟡 Possibly Needed' : '🟢 May Not Need a Lawyer'}
+                    {lawyerResult.needed==='YES' ? 'Lawyer Needed' : lawyerResult.needed==='MAYBE' ? 'Possibly Needed' : 'May Not Need a Lawyer'}
                   </Text>
                   <Text style={[s.lawyerBoxText, {marginBottom:8}]}>{lawyerResult.reason}</Text>
-                  <View style={s.tag}><Text style={s.tagText}>⏰ Urgency: {lawyerResult.urgency}</Text></View>
-                  {lawyerResult.lawyerType ? <Text style={[s.lawyerBoxText, {marginTop:8, fontWeight:'600'}]}>Type: {lawyerResult.lawyerType}</Text> : null}
+                  <View style={s.tag}><Text style={s.tagText}>Urgency: {lawyerResult.urgency}</Text></View>
+                  {lawyerResult.lawyerType ? <Text style={[s.lawyerBoxText, {marginTop:8, fontWeight:'600'}]}>Type of Lawyer: {lawyerResult.lawyerType}</Text> : null}
                 </View>
-
-                {/* Alternatives */}
                 {lawyerResult.alternatives && lawyerResult.alternatives.length > 0 && (
                   <View style={s.answerBox}>
-                    <Text style={[s.answerTitle, {marginBottom:10}]}>💡 Alternatives</Text>
+                    <Text style={[s.answerTitle, {marginBottom:10}]}>Alternatives</Text>
                     {lawyerResult.alternatives.map((a, i) => (
                       <View key={i} style={{flexDirection:'row', marginBottom:8, gap:8}}>
                         <Text style={{color: COLORS.primary, fontWeight:'700'}}>•</Text>
@@ -621,7 +732,6 @@ export default function HomeScreen() {
     return null;
   };
 
-  // ─── MAIN APP ────────────────────────────────────────────────────────────
   return (
     <SafeAreaView style={s.safe}>
 
@@ -633,13 +743,13 @@ export default function HomeScreen() {
           <Text style={s.appSub}>Your Legal Assistant</Text>
         </View>
         {isPro
-          ? <View style={s.proBadge}><Text style={s.proBadgeText}>⭐ PRO</Text></View>
+          ? <View style={s.proBadge}><Text style={s.proBadgeText}>PRO</Text></View>
           : <TouchableOpacity style={s.proBtn} onPress={() => setShowProModal(true)}>
-              <Text style={s.proBtnText}>Go PRO ₹299</Text>
+              <Text style={s.proBtnText}>Go PRO Rs.299</Text>
             </TouchableOpacity>
         }
         <TouchableOpacity style={s.keyBtn} onPress={() => setShowApiInput(!showApiInput)}>
-          <Text style={s.keyBtnText}>🔑</Text>
+          <Text style={s.keyBtnText}>Key</Text>
         </TouchableOpacity>
       </View>
 
@@ -656,7 +766,7 @@ export default function HomeScreen() {
 
       {/* TABS */}
       <View style={s.tabs}>
-        {[{id:'ai',label:'⚖️ Ask AI'},{id:'rti',label:'📋 File RTI'},{id:'pro',label:'⭐ PRO'}].map(tab => (
+        {[{id:'ai',label:'Ask AI'},{id:'rti',label:'File RTI'},{id:'pro',label:'PRO'}].map(tab => (
           <TouchableOpacity key={tab.id} style={[s.tab, activeTab===tab.id && s.tabActive]} onPress={() => { setActiveTab(tab.id); setProScreen(null); }}>
             <Text style={[s.tabText, activeTab===tab.id && s.tabTextActive]}>{tab.label}</Text>
           </TouchableOpacity>
@@ -665,22 +775,19 @@ export default function HomeScreen() {
 
       <KeyboardAvoidingView style={{flex:1}} behavior={Platform.OS==='ios'?'padding':undefined}>
 
-        {/* ── PRO FEATURE SUB-SCREENS ── */}
         {activeTab === 'pro' && proScreen ? renderProScreen() : (
 
           <ScrollView style={s.scroll} showsVerticalScrollIndicator={false}>
 
-            {/* ── ASK AI TAB ── */}
+            {/* ASK AI TAB */}
             {activeTab === 'ai' && (
               <View style={s.section}>
-
                 {!isPro && (
                   <TouchableOpacity style={s.proBanner} onPress={() => setShowProModal(true)}>
-                    <Text style={s.proBannerText}>⭐ Upgrade to PRO for Smart AI + Legal Roadmap + Risk Score</Text>
-                    <Text style={s.proBannerBtn}>₹299/mo →</Text>
+                    <Text style={s.proBannerText}>Upgrade to PRO for Smart AI, Legal Roadmap and Risk Score</Text>
+                    <Text style={s.proBannerBtn}>Rs.299</Text>
                   </TouchableOpacity>
                 )}
-
                 <Text style={s.sectionLabel}>Legal Area</Text>
                 <ScrollView horizontal showsHorizontalScrollIndicator={false} style={s.chipRow}>
                   {TOPICS.map(t => (
@@ -689,7 +796,6 @@ export default function HomeScreen() {
                     </TouchableOpacity>
                   ))}
                 </ScrollView>
-
                 <Text style={s.sectionLabel}>Language</Text>
                 <ScrollView horizontal showsHorizontalScrollIndicator={false} style={s.chipRow}>
                   {LANGUAGES.map(l => (
@@ -698,7 +804,6 @@ export default function HomeScreen() {
                     </TouchableOpacity>
                   ))}
                 </ScrollView>
-
                 <View style={s.inputBox}>
                   <TextInput
                     style={s.textArea}
@@ -710,14 +815,13 @@ export default function HomeScreen() {
                     numberOfLines={4}
                   />
                   <TouchableOpacity style={s.askBtn} onPress={askAI} disabled={loading}>
-                    {loading ? <ActivityIndicator color={COLORS.white}/> : <Text style={s.askBtnText}>Ask LAPOLU{isPro ? ' (PRO)' : ''}</Text>}
+                    {loading ? <ActivityIndicator color={COLORS.white}/> : <Text style={s.askBtnText}>Ask LAPOLU{isPro ? ' PRO' : ''}</Text>}
                   </TouchableOpacity>
                 </View>
 
-                {/* BASIC ANSWER */}
                 {answer && answer.type === 'basic' && (
                   <View style={s.answerBox}>
-                    <Text style={s.answerTitle}>⚖️ LAPOLU Legal Analysis</Text>
+                    <Text style={s.answerTitle}>LAPOLU Legal Analysis</Text>
                     <Text style={s.answerSub}>Based on Indian Law (BNS/BNSS/BSA)</Text>
                     <Text style={s.answerText}>{answer.text}</Text>
                     <View style={s.tagRow}>
@@ -727,17 +831,16 @@ export default function HomeScreen() {
                     </View>
                     <Text style={s.disclaimer}>General legal information only. Not legal advice. Consult a Bar Council advocate.</Text>
                     <TouchableOpacity style={s.upgradeHint} onPress={() => setShowProModal(true)}>
-                      <Text style={s.upgradeHintText}>⭐ Upgrade to PRO for Legal Roadmap + Risk Score + Smart Advisor</Text>
+                      <Text style={s.upgradeHintText}>Upgrade to PRO for Legal Roadmap, Risk Score and Smart Advisor</Text>
                     </TouchableOpacity>
                   </View>
                 )}
 
-                {/* PRO ANSWER */}
                 {answer && answer.type === 'pro' && (
                   <View>
                     <View style={s.answerBox}>
-                      <Text style={s.answerTitle}>⚖️ LAPOLU Legal Analysis</Text>
-                      <Text style={s.answerSub}>Based on Indian Law (BNS/BNSS/BSA) · PRO</Text>
+                      <Text style={s.answerTitle}>LAPOLU Legal Analysis</Text>
+                      <Text style={s.answerSub}>Based on Indian Law (BNS/BNSS/BSA) — PRO</Text>
                       <Text style={s.answerText}>{answer.answer}</Text>
                       <View style={s.tagRow}>
                         {['BNS/IPC','BNSS/CrPC','Constitution','BSA 2023'].map(t => (
@@ -746,10 +849,9 @@ export default function HomeScreen() {
                       </View>
                       <Text style={s.disclaimer}>General legal information only. Not legal advice.</Text>
                     </View>
-
                     {answer.followup && (
                       <View style={s.followupBox}>
-                        <Text style={s.followupLabel}>🤖 LAPOLU asks:</Text>
+                        <Text style={s.followupLabel}>LAPOLU asks:</Text>
                         <Text style={s.followupText}>{answer.followup}</Text>
                         <TextInput
                           style={s.followupInput}
@@ -760,11 +862,10 @@ export default function HomeScreen() {
                         />
                       </View>
                     )}
-
                     {answer.score && (
                       <View style={[s.scoreBox, {backgroundColor: getRiskBg(answer.score)}]}>
                         <View style={s.scoreRow}>
-                          <Text style={s.scoreTitle}>📊 Legal Safety Score</Text>
+                          <Text style={s.scoreTitle}>Legal Safety Score</Text>
                           <View style={[s.scoreBadge, {backgroundColor: getRiskColor(answer.score)}]}>
                             <Text style={s.scoreBadgeText}>{answer.score}/10</Text>
                           </View>
@@ -775,10 +876,9 @@ export default function HomeScreen() {
                         </View>
                       </View>
                     )}
-
                     {answer.roadmap && answer.roadmap.length > 0 && (
                       <View style={s.roadmapBox}>
-                        <Text style={s.roadmapTitle}>🗺️ Your Legal Roadmap</Text>
+                        <Text style={s.roadmapTitle}>Your Legal Roadmap</Text>
                         {answer.roadmap.map((step, i) => (
                           <View key={i} style={s.roadmapStep}>
                             <View style={s.roadmapDot}><Text style={s.roadmapDotText}>{i+1}</Text></View>
@@ -787,11 +887,10 @@ export default function HomeScreen() {
                         ))}
                       </View>
                     )}
-
                     {answer.lawyerNeeded && (
                       <View style={[s.lawyerBox, {backgroundColor: answer.lawyerNeeded==='YES' ? COLORS.redBg : COLORS.greenBg}]}>
                         <Text style={s.lawyerBoxTitle}>
-                          {answer.lawyerNeeded === 'YES' ? '🔴 Lawyer Recommended' : '🟢 You May Handle This'}
+                          {answer.lawyerNeeded === 'YES' ? 'Lawyer Recommended' : 'You May Handle This'}
                         </Text>
                         <Text style={s.lawyerBoxText}>{answer.lawyerReason}</Text>
                       </View>
@@ -805,7 +904,6 @@ export default function HomeScreen() {
                   </View>
                 )}
 
-                {/* QUICK QUERIES */}
                 <Text style={s.sectionLabel}>Quick Queries</Text>
                 {[
                   'What are my rights if arrested in India under BNSS?',
@@ -822,7 +920,7 @@ export default function HomeScreen() {
               </View>
             )}
 
-            {/* ── RTI TAB ── */}
+            {/* RTI TAB */}
             {activeTab === 'rti' && (
               <View style={s.section}>
                 <Text style={s.rtiTitle}>File RTI Application</Text>
@@ -850,7 +948,7 @@ export default function HomeScreen() {
                 )}
                 {rtiStep === 3 && (
                   <View>
-                    <Text style={s.rtiReady}>✓ RTI Application Ready!</Text>
+                    <Text style={s.rtiReady}>RTI Application Ready</Text>
                     <ScrollView style={s.rtiDraft} nestedScrollEnabled>
                       <Text style={s.rtiDraftText}>{rtiLetter}</Text>
                     </ScrollView>
@@ -866,68 +964,66 @@ export default function HomeScreen() {
               </View>
             )}
 
-            {/* ── PRO TAB ── */}
+            {/* PRO TAB */}
             {activeTab === 'pro' && (
               <View style={s.section}>
                 <View style={s.proHero}>
-                  <Text style={s.proHeroTitle}>⭐ LAPOLU PRO</Text>
-                  <Text style={s.proHeroPrice}>₹299 / month</Text>
-                  <Text style={s.proHeroSub}>India's Smartest Legal AI Assistant</Text>
+                  <Text style={s.proHeroLabel}>LAPOLU PRO</Text>
+                  <Text style={s.proHeroPrice}>Rs.299 / month</Text>
+                  <Text style={s.proHeroSub}>India's most powerful Legal AI</Text>
+                  <Text style={s.proHeroSubSmall}>Cancel anytime. No questions asked.</Text>
                   {!isPro && (
                     <TouchableOpacity style={s.proHeroBtn} onPress={() => setShowProModal(true)}>
-                      <Text style={s.proHeroBtnText}>Upgrade to PRO →</Text>
+                      <Text style={s.proHeroBtnText}>Upgrade to PRO</Text>
                     </TouchableOpacity>
                   )}
                   {isPro && (
                     <View style={s.proActiveBox}>
-                      <Text style={s.proActiveText}>✅ You are on LAPOLU PRO!</Text>
+                      <Text style={s.proActiveText}>Active Subscription</Text>
                     </View>
                   )}
                 </View>
 
-                {/* PRO FEATURE CARDS — now all tappable */}
                 <Text style={s.sectionLabel}>Your PRO Features</Text>
                 {PRO_FEATURES.map((f, i) => (
                   <TouchableOpacity
                     key={i}
-                    style={[s.proFeatureCard, isPro && {borderColor: COLORS.primary, borderWidth: 1.5}]}
+                    style={[s.proFeatureCard, isPro && {borderLeftWidth: 3, borderLeftColor: COLORS.primary}]}
                     onPress={() => handleProFeatureTap(f.action)}
                     activeOpacity={0.7}
                   >
-                    <Text style={s.proFeatureIcon}>{f.icon}</Text>
                     <View style={{flex:1}}>
                       <Text style={s.proFeatureTitle}>{f.title}</Text>
                       <Text style={s.proFeatureDesc}>{f.desc}</Text>
                     </View>
-                    <Text style={isPro ? {color: COLORS.primary, fontSize:18, fontWeight:'700'} : {color: COLORS.ink3, fontSize:14}}>
-                      {isPro ? '→' : '🔒'}
+                    <Text style={isPro ? {color: COLORS.primary, fontSize:16, fontWeight:'700'} : {color: COLORS.ink3, fontSize:13}}>
+                      {isPro ? '→' : 'Lock'}
                     </Text>
                   </TouchableOpacity>
                 ))}
 
-                {/* Compare table */}
                 <View style={s.proCompare}>
                   <Text style={s.proCompareTitle}>Free vs PRO</Text>
                   {[
-                    ['Basic AI answers', '✅', '✅'],
-                    ['Smart follow-up questions', '❌', '✅'],
-                    ['Legal Roadmap', '❌', '✅'],
-                    ['Legal Safety Score', '❌', '✅'],
-                    ['Risk Detector', '❌', '✅'],
-                    ['Document Engine', '❌', '✅'],
-                    ['Legal Reminders', '❌', '✅'],
-                    ['Priority AI Access', '❌', '✅'],
+                    ['Basic AI answers', 'Yes', 'Yes'],
+                    ['Smart follow-up questions', 'No', 'Yes'],
+                    ['Legal Roadmap', 'No', 'Yes'],
+                    ['Legal Safety Score', 'No', 'Yes'],
+                    ['Risk Detector', 'No', 'Yes'],
+                    ['Document Engine', 'No', 'Yes'],
+                    ['Legal Reminders', 'No', 'Yes'],
+                    ['Priority AI Access', 'No', 'Yes'],
                   ].map(([feat, free, pro], i) => (
                     <View key={i} style={[s.compareRow, i%2===0 && {backgroundColor:'#F8F4FF'}]}>
                       <Text style={s.compareFeature}>{feat}</Text>
-                      <Text style={s.compareVal}>{free}</Text>
-                      <Text style={s.compareVal}>{pro}</Text>
+                      <Text style={[s.compareVal, {color: free==='Yes' ? COLORS.green : COLORS.ink3}]}>{free}</Text>
+                      <Text style={[s.compareVal, {color: pro==='Yes' ? COLORS.green : COLORS.ink3, fontWeight:'700'}]}>{pro}</Text>
                     </View>
                   ))}
-                  <View style={s.compareHeader}>
-                    <Text style={[s.compareFeature,{fontWeight:'700'}]}>Feature</Text>
-                    <Text style={[s.compareVal,{fontWeight:'700'}]}>Free</Text>
-                    <Text style={[s.compareVal,{fontWeight:'700',color:COLORS.primary}]}>PRO</Text>
+                  <View style={[s.compareRow, {backgroundColor: COLORS.primary}]}>
+                    <Text style={[s.compareFeature, {color: COLORS.white, fontWeight:'700'}]}>Plan</Text>
+                    <Text style={[s.compareVal, {color: COLORS.white, fontWeight:'700'}]}>Free</Text>
+                    <Text style={[s.compareVal, {color: COLORS.gold, fontWeight:'700'}]}>PRO</Text>
                   </View>
                 </View>
               </View>
@@ -951,14 +1047,14 @@ export default function HomeScreen() {
         )}
       </KeyboardAvoidingView>
 
-      {/* LEGAL MODALS — fixed: using proper <Modal> */}
+      {/* LEGAL MODAL */}
       <Modal visible={!!legalModal} animationType="fade" transparent onRequestClose={() => setLegalModal(null)}>
         <View style={s.modalOverlay}>
           <View style={s.modalBox}>
             <View style={s.modalHead}>
               <Text style={s.modalTitle}>{legalModal ? LEGAL_DATA[legalModal].title : ''}</Text>
               <TouchableOpacity onPress={() => setLegalModal(null)}>
-                <Text style={s.modalClose}>✕</Text>
+                <Text style={s.modalClose}>x</Text>
               </TouchableOpacity>
             </View>
             <ScrollView style={s.modalBody}>
@@ -973,25 +1069,37 @@ export default function HomeScreen() {
         <View style={s.modalOverlay}>
           <View style={s.proModal}>
             <View style={s.proModalHead}>
-              <Text style={s.proModalTitle}>⭐ LAPOLU PRO</Text>
+              <Text style={s.proModalTitle}>LAPOLU PRO</Text>
               <TouchableOpacity onPress={() => setShowProModal(false)}>
-                <Text style={s.modalClose}>✕</Text>
+                <Text style={s.modalClose}>x</Text>
               </TouchableOpacity>
             </View>
-            <ScrollView style={{maxHeight: 400}}>
-              <Text style={s.proModalPrice}>₹299 / month</Text>
-              <Text style={s.proModalSub}>Get India's most powerful Legal AI</Text>
-              {PRO_FEATURES.slice(0,6).map((f, i) => (
-                <View key={i} style={s.proModalFeature}>
-                  <Text style={s.proModalFeatureIcon}>{f.icon}</Text>
-                  <Text style={s.proModalFeatureText}>{f.title}</Text>
-                </View>
-              ))}
+            <ScrollView style={{maxHeight: 420}}>
+              <View style={{padding: 20}}>
+                <Text style={s.proModalPrice}>Rs.299 / month</Text>
+                <Text style={s.proModalSub}>Cancel anytime. No questions asked.</Text>
+
+                <View style={s.proModalDivider}/>
+
+                {PRO_FEATURES.slice(0,6).map((f, i) => (
+                  <View key={i} style={s.proModalFeature}>
+                    <View style={s.proModalFeatureDot}/>
+                    <Text style={s.proModalFeatureText}>{f.title}</Text>
+                  </View>
+                ))}
+                <Text style={{fontSize:11, color: COLORS.ink3, marginTop:8, paddingLeft: 20}}>And 4 more features...</Text>
+              </View>
             </ScrollView>
-            <TouchableOpacity style={s.proModalBtn} onPress={() => { setIsPro(true); setShowProModal(false); Alert.alert('Welcome to LAPOLU PRO! 🎉', 'All 10 PRO features are now unlocked. Tap any feature to use it.'); }}>
-              <Text style={s.proModalBtnText}>Activate PRO — ₹299/month</Text>
-            </TouchableOpacity>
-            <Text style={s.proModalNote}>Payment integration coming soon. Tap to demo PRO features.</Text>
+            <View style={{padding: 16}}>
+              <TouchableOpacity style={s.proModalBtn} onPress={() => {
+                setIsPro(true);
+                setShowProModal(false);
+                Alert.alert('Welcome to LAPOLU PRO', 'All 10 PRO features are now unlocked. Tap any feature to use it.');
+              }}>
+                <Text style={s.proModalBtnText}>Activate PRO — Rs.299/month</Text>
+              </TouchableOpacity>
+              <Text style={s.proModalNote}>Payment via UPI, Card or Net Banking. Recurring monthly. Cancel anytime from settings.</Text>
+            </View>
           </View>
         </View>
       </Modal>
@@ -1019,7 +1127,7 @@ const s = StyleSheet.create({
   proBadge:{backgroundColor:'rgba(240,195,142,0.3)',borderRadius:8,paddingHorizontal:10,paddingVertical:5,borderWidth:1,borderColor:'#F0C38E'},
   proBadgeText:{color:'#F0C38E',fontSize:11,fontWeight:'700'},
   keyBtn:{backgroundColor:'rgba(255,255,255,0.15)',borderRadius:8,paddingHorizontal:10,paddingVertical:6,borderWidth:1,borderColor:'rgba(255,255,255,0.3)'},
-  keyBtnText:{color:'#fff',fontSize:14},
+  keyBtnText:{color:'#fff',fontSize:11,fontWeight:'600'},
 
   apiBox:{backgroundColor:'#fff',padding:16,borderBottomWidth:1,borderColor:'#EDD9C0'},
   apiLabel:{fontSize:12,fontWeight:'600',color:'#48426D',marginBottom:8},
@@ -1044,7 +1152,7 @@ const s = StyleSheet.create({
 
   proBanner:{backgroundColor:'#F8F4FF',borderWidth:1.5,borderColor:'#48426D',borderRadius:12,padding:12,marginBottom:16,flexDirection:'row',alignItems:'center',justifyContent:'space-between'},
   proBannerText:{flex:1,fontSize:12,color:'#48426D',fontWeight:'600'},
-  proBannerBtn:{color:'#F0C38E',fontSize:13,fontWeight:'800',backgroundColor:'#48426D',paddingHorizontal:10,paddingVertical:4,borderRadius:6,marginLeft:8},
+  proBannerBtn:{color:'#F0C38E',fontSize:12,fontWeight:'800',backgroundColor:'#48426D',paddingHorizontal:10,paddingVertical:4,borderRadius:6,marginLeft:8},
 
   inputBox:{backgroundColor:'#fff',borderWidth:1.5,borderColor:'#EDD9C0',borderRadius:14,padding:14,marginBottom:14},
   textArea:{fontSize:14,color:'#1A1530',minHeight:100,textAlignVertical:'top'},
@@ -1063,7 +1171,7 @@ const s = StyleSheet.create({
   upgradeHintText:{fontSize:11,color:'#48426D',fontWeight:'600',textAlign:'center'},
 
   followupBox:{backgroundColor:'#F8F4FF',borderWidth:1.5,borderColor:'#C5B8E8',borderRadius:14,padding:14,marginBottom:14},
-  followupLabel:{fontSize:11,fontWeight:'700',color:'#48426D',marginBottom:6,letterSpacing:1},
+  followupLabel:{fontSize:10,fontWeight:'700',color:'#48426D',marginBottom:6,letterSpacing:1,textTransform:'uppercase'},
   followupText:{fontSize:14,color:'#3A3360',marginBottom:10,lineHeight:20},
   followupInput:{backgroundColor:'#fff',borderWidth:1,borderColor:'#C5B8E8',borderRadius:8,padding:10,fontSize:13,color:'#1A1530',minHeight:60},
 
@@ -1103,33 +1211,52 @@ const s = StyleSheet.create({
   rtiDraftText:{fontSize:12,color:'#3A3360',lineHeight:20},
   rtiPortalBtn:{backgroundColor:'#1A7A4A',borderRadius:10,padding:13,alignItems:'center',marginBottom:8},
   rtiPortalBtnText:{color:'#fff',fontSize:13,fontWeight:'700'},
-  rtiEditBtn:{backgroundColor:'#fff',borderWidth:1.5,borderColor:'#EDD9C0',borderRadius:10,padding:11,alignItems:'center',marginBottom:10},
+  rtiEditBtn:{backgroundColor:'#fff',borderWidth:1.5,borderColor:'#EDD9C0',borderRadius:10,padding:11,alignItems:'center',marginBottom:8},
   rtiEditBtnText:{color:'#48426D',fontSize:13,fontWeight:'600'},
   rtiTip:{fontSize:11,color:'#7A7298',lineHeight:16,backgroundColor:'#FDEBD0',padding:10,borderRadius:8},
 
+  // Document Library — premium clean cards
+  docCard:{backgroundColor:'#fff',borderWidth:1,borderColor:'#EDD9C0',borderRadius:12,padding:16,marginBottom:10,flexDirection:'row',alignItems:'center'},
+  docCardLeft:{flex:1},
+  docCardTitle:{fontSize:14,fontWeight:'700',color:'#1A1530',marginBottom:2},
+  docCardSubtitle:{fontSize:10,fontWeight:'600',color:'#48426D',letterSpacing:1,textTransform:'uppercase',marginBottom:4,opacity:0.75},
+  docCardDesc:{fontSize:12,color:'#7A7298',lineHeight:17},
+  docCardArrow:{width:32,height:32,borderRadius:16,backgroundColor:'#F8F4FF',alignItems:'center',justifyContent:'center',marginLeft:10},
+  docCardArrowText:{color:'#48426D',fontSize:16,fontWeight:'700'},
+
+  // Document Form header
+  docFormHeader:{backgroundColor:'#48426D',borderRadius:12,padding:16,marginBottom:16},
+  docFormTitle:{color:'#fff',fontSize:18,fontWeight:'700'},
+  docFormSubtitle:{color:'#F0C38E',fontSize:11,fontWeight:'600',letterSpacing:1,textTransform:'uppercase',marginTop:2},
+  docFormInstruction:{fontSize:12,color:'#7A7298',marginBottom:16,lineHeight:18},
+
+  // Document ready badge
+  docReadyBadge:{backgroundColor:'#E8F5EE',borderRadius:8,paddingHorizontal:14,paddingVertical:8,alignSelf:'flex-start',marginBottom:8,borderWidth:1,borderColor:'#1A7A4A'},
+  docReadyText:{color:'#1A7A4A',fontSize:12,fontWeight:'700',letterSpacing:0.5},
+  docReadySub:{fontSize:12,color:'#7A7298',marginBottom:12,lineHeight:17},
+
   proHero:{backgroundColor:'#48426D',borderRadius:16,padding:24,alignItems:'center',marginBottom:20},
-  proHeroTitle:{color:'#F0C38E',fontSize:24,fontWeight:'800',letterSpacing:2},
-  proHeroPrice:{color:'#fff',fontSize:32,fontWeight:'900',marginTop:4},
-  proHeroSub:{color:'rgba(255,255,255,0.7)',fontSize:13,marginTop:4,marginBottom:16},
-  proHeroBtn:{backgroundColor:'#F0C38E',borderRadius:10,paddingHorizontal:24,paddingVertical:12},
+  proHeroLabel:{color:'#F0C38E',fontSize:11,fontWeight:'700',letterSpacing:3,textTransform:'uppercase',marginBottom:8},
+  proHeroPrice:{color:'#fff',fontSize:32,fontWeight:'900',marginBottom:4},
+  proHeroSub:{color:'rgba(255,255,255,0.8)',fontSize:14,marginBottom:2},
+  proHeroSubSmall:{color:'rgba(255,255,255,0.5)',fontSize:11,marginBottom:20},
+  proHeroBtn:{backgroundColor:'#F0C38E',borderRadius:10,paddingHorizontal:28,paddingVertical:13},
   proHeroBtnText:{color:'#2E2A47',fontSize:15,fontWeight:'800'},
-  proActiveBox:{backgroundColor:'rgba(240,195,142,0.2)',borderRadius:10,paddingHorizontal:20,paddingVertical:10,borderWidth:1,borderColor:'#F0C38E'},
-  proActiveText:{color:'#F0C38E',fontSize:14,fontWeight:'700'},
-  proFeatureCard:{backgroundColor:'#fff',borderWidth:1.5,borderColor:'#EDD9C0',borderRadius:12,padding:14,marginBottom:10,flexDirection:'row',alignItems:'center',gap:12},
-  proFeatureIcon:{fontSize:24},
+  proActiveBox:{backgroundColor:'rgba(240,195,142,0.15)',borderRadius:10,paddingHorizontal:20,paddingVertical:10,borderWidth:1,borderColor:'rgba(240,195,142,0.4)'},
+  proActiveText:{color:'#F0C38E',fontSize:13,fontWeight:'600',letterSpacing:0.5},
+
+  proFeatureCard:{backgroundColor:'#fff',borderWidth:1,borderColor:'#EDD9C0',borderRadius:12,padding:14,marginBottom:8,flexDirection:'row',alignItems:'center',gap:12},
   proFeatureTitle:{fontSize:14,fontWeight:'700',color:'#1A1530',marginBottom:2},
   proFeatureDesc:{fontSize:12,color:'#7A7298',lineHeight:17},
-  proFeatureCheck:{color:'#1A7A4A',fontSize:18,fontWeight:'700'},
-  proCompare:{backgroundColor:'#fff',borderWidth:1.5,borderColor:'#EDD9C0',borderRadius:14,overflow:'hidden',marginTop:8},
-  proCompareTitle:{fontSize:14,fontWeight:'700',color:'#48426D',padding:14,borderBottomWidth:1,borderColor:'#EDD9C0'},
-  compareRow:{flexDirection:'row',paddingVertical:10,paddingHorizontal:14},
-  compareHeader:{flexDirection:'row',paddingVertical:10,paddingHorizontal:14,backgroundColor:'#F8F4FF',borderTopWidth:1,borderColor:'#EDD9C0'},
-  compareFeature:{flex:2,fontSize:12,color:'#3A3360'},
-  compareVal:{flex:1,fontSize:13,textAlign:'center'},
 
-  // PRO Screen styles
+  proCompare:{backgroundColor:'#fff',borderWidth:1.5,borderColor:'#EDD9C0',borderRadius:14,overflow:'hidden',marginTop:16},
+  proCompareTitle:{fontSize:13,fontWeight:'700',color:'#48426D',padding:14,borderBottomWidth:1,borderColor:'#EDD9C0',letterSpacing:0.5},
+  compareRow:{flexDirection:'row',paddingVertical:10,paddingHorizontal:14},
+  compareFeature:{flex:2,fontSize:12,color:'#3A3360'},
+  compareVal:{flex:1,fontSize:12,textAlign:'center'},
+
   backBtn:{marginBottom:16},
-  backBtnText:{fontSize:14,color:'#48426D',fontWeight:'600'},
+  backBtnText:{fontSize:13,color:'#48426D',fontWeight:'600'},
   proScreenTitle:{fontSize:22,fontWeight:'800',color:'#48426D',marginBottom:6},
   proScreenSub:{fontSize:13,color:'#7A7298',marginBottom:20,lineHeight:18},
 
@@ -1138,8 +1265,8 @@ const s = StyleSheet.create({
   footerSub:{color:'rgba(255,255,255,0.6)',fontSize:11,marginTop:4},
   footerContact:{color:'#F0C38E',fontSize:11,marginTop:4},
   footerBtns:{flexDirection:'row',flexWrap:'wrap',justifyContent:'center',gap:6,marginTop:14,paddingTop:14,borderTopWidth:1,borderTopColor:'rgba(255,255,255,0.15)'},
-  footerBtn:{borderWidth:1,borderColor:'rgba(255,255,255,0.3)',borderRadius:6,paddingHorizontal:10,paddingVertical:5},
-  footerBtnText:{color:'rgba(255,255,255,0.7)',fontSize:10},
+  footerBtn:{borderWidth:1,borderColor:'rgba(255,255,255,0.2)',borderRadius:6,paddingHorizontal:10,paddingVertical:5},
+  footerBtnText:{color:'rgba(255,255,255,0.65)',fontSize:10},
 
   modalOverlay:{flex:1,backgroundColor:'rgba(0,0,0,0.7)',justifyContent:'center',alignItems:'center'},
   modalBox:{backgroundColor:'#fff',borderRadius:16,width:'90%',maxHeight:'80%',overflow:'hidden'},
@@ -1150,14 +1277,15 @@ const s = StyleSheet.create({
   modalText:{fontSize:13,color:'#3A3360',lineHeight:22},
 
   proModal:{backgroundColor:'#fff',borderRadius:20,width:'92%',overflow:'hidden'},
-  proModalHead:{backgroundColor:'#48426D',padding:16,flexDirection:'row',justifyContent:'space-between',alignItems:'center'},
-  proModalTitle:{color:'#F0C38E',fontSize:20,fontWeight:'800'},
-  proModalPrice:{fontSize:28,fontWeight:'900',color:'#48426D',textAlign:'center',paddingTop:16},
-  proModalSub:{fontSize:13,color:'#7A7298',textAlign:'center',marginBottom:16,paddingHorizontal:16},
-  proModalFeature:{flexDirection:'row',alignItems:'center',paddingHorizontal:20,paddingVertical:10,borderBottomWidth:1,borderColor:'#EDD9C0',gap:12},
-  proModalFeatureIcon:{fontSize:20},
-  proModalFeatureText:{fontSize:13,color:'#1A1530',fontWeight:'600'},
-  proModalBtn:{backgroundColor:'#48426D',margin:16,borderRadius:12,padding:16,alignItems:'center'},
-  proModalBtnText:{color:'#F0C38E',fontSize:16,fontWeight:'800'},
-  proModalNote:{fontSize:10,color:'#7A7298',textAlign:'center',paddingBottom:16,paddingHorizontal:16},
+  proModalHead:{backgroundColor:'#48426D',padding:18,flexDirection:'row',justifyContent:'space-between',alignItems:'center'},
+  proModalTitle:{color:'#F0C38E',fontSize:18,fontWeight:'800',letterSpacing:2},
+  proModalPrice:{fontSize:30,fontWeight:'900',color:'#48426D',textAlign:'center',paddingTop:4},
+  proModalSub:{fontSize:12,color:'#7A7298',textAlign:'center',marginBottom:4},
+  proModalDivider:{height:1,backgroundColor:'#EDD9C0',marginVertical:14},
+  proModalFeature:{flexDirection:'row',alignItems:'center',paddingVertical:8,gap:12},
+  proModalFeatureDot:{width:6,height:6,borderRadius:3,backgroundColor:'#48426D'},
+  proModalFeatureText:{fontSize:13,color:'#1A1530',fontWeight:'500'},
+  proModalBtn:{backgroundColor:'#48426D',borderRadius:12,padding:16,alignItems:'center'},
+  proModalBtnText:{color:'#F0C38E',fontSize:15,fontWeight:'800'},
+  proModalNote:{fontSize:10,color:'#7A7298',textAlign:'center',marginTop:10,lineHeight:15},
 });
